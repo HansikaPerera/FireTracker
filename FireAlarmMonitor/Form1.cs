@@ -25,9 +25,25 @@ namespace FireAlarmMonitor
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            Home h1 = new Home();
-            this.Hide();
-            h1.Show();
+            
+            if (userName.Text == "Admin" && password.Text == "admin123")
+            {
+                Home h1 = new Home();
+                this.Hide();
+                h1.Show();
+            }
+
+            else
+            {
+                string message = "Invalid UserName or Password.";
+                string title = "Something Wrong";
+                MessageBox.Show(message, title);
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
